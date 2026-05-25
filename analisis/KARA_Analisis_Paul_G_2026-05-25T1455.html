@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Análisis de Piel KARA — Paul G</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Georgia', 'Times New Roman', serif; background: #fdf7f8; color: #2c2c2c; line-height: 1.7; }
+
+  .header { background: #E8899A; padding: 48px 24px 36px; text-align: center; color: #fff; }
+  .logo { font-size: 52px; font-weight: 300; letter-spacing: 16px; text-indent: 16px; margin-bottom: 10px; }
+  .logo-tag { font-size: 11px; letter-spacing: 5px; text-transform: uppercase; opacity: 0.88; font-family: Arial, sans-serif; }
+
+  .meta-bar { background: #2c2c2c; color: #fff; display: flex; justify-content: space-between; align-items: center; padding: 10px 40px; flex-wrap: wrap; gap: 8px; }
+  .meta-bar span { font-size: 11px; letter-spacing: 1px; font-family: Arial, sans-serif; }
+  .skin-badge { background: #E8899A; color: #fff; padding: 3px 14px; border-radius: 20px; font-size: 11px; font-weight: bold; letter-spacing: 1px; text-transform: uppercase; font-family: Arial, sans-serif; }
+
+  .foto-section { background: #fff; padding: 36px 20px 28px; text-align: center; border-bottom: 1px solid #f3e0e4; }
+  .foto-label { font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: #E8899A; font-family: Arial, sans-serif; margin-bottom: 16px; }
+  .foto-wrap { display: inline-block; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 24px rgba(232,137,154,0.25); border: 3px solid #E8899A; width: 200px; aspect-ratio: 2 / 3; }
+  .foto-wrap img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .foto-caption { margin-top: 12px; font-size: 12px; color: #999; font-family: Arial, sans-serif; font-style: italic; }
+
+  .container { max-width: 780px; margin: 0 auto; padding: 40px 32px; }
+
+  .section-header { font-size: 15px; font-weight: bold; color: #2c2c2c; margin: 32px 0 14px; padding-bottom: 8px; border-bottom: 2px solid #E8899A; font-family: Arial, sans-serif; letter-spacing: 0.5px; }
+  p { font-size: 14px; line-height: 1.85; color: #444; margin: 8px 0; }
+  strong { color: #c0607a; }
+  .product-link { color: #c0607a; text-decoration: underline; text-underline-offset: 3px; }
+  .product-link:hover { color: #E8899A; }
+
+  .rec-list { list-style: none; margin: 10px 0; }
+  .rec-list li { font-size: 14px; line-height: 1.8; color: #444; padding: 7px 0 7px 22px; position: relative; border-bottom: 1px solid #f3e0e4; }
+  .rec-list li:last-child { border-bottom: none; }
+  .rec-list li::before { content: '◆'; color: #E8899A; font-size: 7px; position: absolute; left: 0; top: 12px; }
+
+  .catalog-wrap { background: #fff; border-top: 3px solid #E8899A; margin-top: 50px; padding: 40px 32px; max-width: 780px; margin-left: auto; margin-right: auto; }
+  .catalog-title { font-size: 13px; font-weight: bold; letter-spacing: 4px; text-transform: uppercase; color: #E8899A; text-align: center; margin-bottom: 8px; font-family: Arial, sans-serif; }
+  .catalog-subtitle { font-size: 12px; color: #999; text-align: center; margin-bottom: 30px; font-family: Arial, sans-serif; letter-spacing: 1px; }
+  .catalog-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+  @media (max-width: 600px) { .catalog-grid { grid-template-columns: repeat(2, 1fr); } }
+
+  .product-card { text-align: center; }
+  .product-img-wrap { width: 100%; aspect-ratio: 1; overflow: hidden; border-radius: 10px; background: #fdf7f8; margin-bottom: 10px; }
+  .product-img-wrap img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.3s; }
+  .product-img-wrap img:hover { transform: scale(1.04); }
+  .product-img-link { display: block; text-decoration: none; }
+  .product-name-link { text-decoration: none; }
+  .product-name { font-size: 12px; font-weight: bold; color: #2c2c2c; margin-bottom: 4px; font-family: Arial, sans-serif; transition: color 0.2s; }
+  .product-name-link:hover .product-name { color: #E8899A; }
+  .product-desc { font-size: 10px; color: #999; line-height: 1.5; margin-bottom: 6px; font-family: Arial, sans-serif; }
+  .product-price { font-size: 14px; font-weight: bold; color: #E8899A; font-family: Arial, sans-serif; }
+
+  .disclaimer { margin: 44px auto 20px; padding: 20px 24px; background: #fff5f7; border-left: 4px solid #E8899A; border-radius: 0 6px 6px 0; max-width: 780px; }
+  .disclaimer-title { font-size: 11px; font-weight: bold; color: #E8899A; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 8px; font-family: Arial, sans-serif; }
+  .disclaimer p { font-size: 12px; color: #777; font-style: italic; line-height: 1.7; }
+
+  .footer { background: #E8899A; color: #fff; text-align: center; padding: 28px 20px; margin-top: 40px; }
+  .footer p { color: #fff; font-size: 12px; letter-spacing: 2px; font-family: Arial, sans-serif; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="logo">KARA</div>
+  <div class="logo-tag">Análisis de Piel Personalizado</div>
+</div>
+
+<div class="meta-bar">
+  <span>Protocolo para: Paul G</span>
+  <span class="skin-badge">Piel Mixta</span>
+  <span>25 de mayo de 2026</span>
+</div>
+
+
+<div class="foto-section">
+  <div class="foto-label">Foto analizada</div>
+  <div class="foto-wrap">
+    <img src="https://drive.google.com/thumbnail?id=1cJKZ22pl1oxGTUwi2bONToRkErKFSBeg&sz=w600" alt="Análisis facial">
+  </div>
+  <div class="foto-caption">Imagen enviada para análisis · 25 de mayo de 2026</div>
+</div>
+
+<div class="container">
+  <div class="section-header">✨ TU ANÁLISIS PERSONALIZADO — Hola, soy KARA AI. Este análisis facial está hecho sólo para ti: observé tu zona T con brillo y poros visibles, mejillas más equilibradas y un tono con algunas zonas opacas y marcas leves. Voy a proponerte un plan elegante y práctico para que tu piel recupere textura, control del sebo y luminosidad sin perder confort.</div>
+<div class="section-header">🎯 LO QUE TU PIEL NOS DICE — Tu piel es mixta: la T tiende a producir más sebo y muestra poros moderados; las mejillas son normales a secas y conservan buena barrera. La textura está algo irregular y la piel se ve apagada; hay líneas finas y manchas leves que merecen atención preventiva. El enrojecimiento es puntual y no dominante. En conjunto, conviene equilibrar control de brillo y poros en la zona T mientras proteges e hidratas las mejillas.</div>
+<div class="section-header">📋 TU PROTOCOLO DE PRODUCTOS — lista priorizada</div>
+<ul class="rec-list">
+  <li><strong><a href="https://karaclinical.com/es/productos/kara-oxy-pro" target="_blank" rel="noopener" class="product-link">Kara Oxy Pro</a></strong> (Mushroom)</li>
+</ul>
+<p>Cómo te ayuda: reduce el exceso de grasa de la zona T y mejora la textura superficial; deja la piel con menos brillo para que los poros se vean menos. Uso sugerido: 5–8 min en sesiones generales; si notas mucha grasa, 8–10 min en T 3 veces/semana.</p>
+<ul class="rec-list">
+  <li><strong><a href="https://karaclinical.com/es/productos/kara-rfusion-pro" target="_blank" rel="noopener" class="product-link">Kara RFusion Pro</a></strong> (modo Cleaning + RF local + Cool)</li>
+</ul>
+<p>Cómo te ayuda: limpia y afina la textura, ayuda a tensar ligeramente los poros y aporta un acabado más liso; usa Cool en mejillas para no sobrecalentar zonas más secas. Uso sugerido: Cleaning 5 min, RF 5–10 min en T/áreas con poros 2–3 veces/semana; finalizar Cool 3–5 min.</p>
+<ul class="rec-list">
+  <li><strong><a href="https://karaclinical.com/es/productos/kara-auren-pro" target="_blank" rel="noopener" class="product-link"><a href="https://karaclinical.com/es/productos/kara-auren" target="_blank" rel="noopener" class="product-link">Kara Auren</a> Pro</a></strong> (led: azul/amarillo para sebo; rojo/amarillo para tono y marcas)</li>
+</ul>
+<p>Cómo te ayuda: regula la actividad sebácea cuando uses azul y amarillo; con rojo e amarillo mejora el tono y atenúa marcas oscuras con el tiempo. Uso sugerido: 15–20 min, 4–5 veces/semana; en días alternos prioriza azul/amarillo para la T y rojo/amarillo en sesiones completas para uniformizar tono.</p>
+<ul class="rec-list">
+  <li><strong><a href="https://karaclinical.com/es/productos/kara-bio-collagen-mask" target="_blank" rel="noopener" class="product-link">Kara Bio Collagen Mask</a></strong></li>
+</ul>
+<p>Cómo te ayuda: restablece la barrera sin obstruir poros; aporta hidratación localizada en mejillas y deja la piel rellena y luminosa. Uso sugerido: 15–20 min, 1–2 veces/semana (tras LED para potenciar recuperación).</p>
+<ul class="rec-list">
+  <li>(Opcional) <strong><a href="https://karaclinical.com/es/productos/kara-rfusion-pro" target="_blank" rel="noopener" class="product-link">Kara RFusion Pro</a></strong> (modo Eyes) — si quieres trabajar líneas finas peri‑orbiculares: 3–5 min por ojo, 3x/semana.</li>
+</ul>
+<div class="section-header">☀️ TU RUTINA DE MAÑANA — un ritual equilibrante (5–10 min + protección)</div>
+<ul class="rec-list">
+  <li>Limpieza suave en todo el rostro, insistiendo ligeramente en T.</li>
+  <li><strong><a href="https://karaclinical.com/es/productos/kara-rfusion-pro" target="_blank" rel="noopener" class="product-link">Kara RFusion Pro</a></strong> — modo Daily 5–8 min con tu sérum hidratante ligero (aplica en todo el rostro; evita RF directo sobre ganglios tiroideos).</li>
+  <li>Sérum antioxidante o iluminador ligero en pómulos y frente.</li>
+  <li>Hidratante adaptado a piel mixta: textura en gel para T, crema ligera en mejillas si lo prefieres.</li>
+  <li>Protector solar SPF 50+ — paso no negociable.</li>
+  <li>Si deseas un extra de control en la mañana: puedes hacer 15–20 min de <strong><a href="https://karaclinical.com/es/productos/kara-auren-pro" target="_blank" rel="noopener" class="product-link"><a href="https://karaclinical.com/es/productos/kara-auren" target="_blank" rel="noopener" class="product-link">Kara Auren</a> Pro</a></strong> (rojo/infrarrojo o amarillo) en días alternos, siempre con SPF después.</li>
+</ul>
+<div class="section-header">🌙 TU RUTINA DE NOCHE — recuperación y renovación (20–30 min en sesiones)</div>
+<ul class="rec-list">
+  <li>Doble limpieza si usaste maquillaje; si no, una limpieza suave.</li>
+  <li>3x/semana: <strong><a href="https://karaclinical.com/es/productos/kara-oxy-pro" target="_blank" rel="noopener" class="product-link">Kara Oxy Pro</a></strong> (Mushroom) en zona T 5–8 min (si la T está muy grasa, 8–10 min). No aplicar sobre lesiones abiertas.</li>
+  <li>2–3x/semana: <strong><a href="https://karaclinical.com/es/productos/kara-rfusion-pro" target="_blank" rel="noopener" class="product-link">Kara RFusion Pro</a></strong> — Cleaning + RF focal en T/área de poros 5–10 min; finalizar Cool 3–5 min en mejillas para confort.</li>
+  <li><strong><a href="https://karaclinical.com/es/productos/kara-auren-pro" target="_blank" rel="noopener" class="product-link"><a href="https://karaclinical.com/es/productos/kara-auren" target="_blank" rel="noopener" class="product-link">Kara Auren</a> Pro</a></strong> 15–20 min: alterna sesiones azul/amarillo para control de sebo y sesiones rojo/amarillo para tono y manchas (4–5x/semana en total).</li>
+  <li>1–2x/semana: <strong><a href="https://karaclinical.com/es/productos/kara-bio-collagen-mask" target="_blank" rel="noopener" class="product-link">Kara Bio Collagen Mask</a></strong> 15–20 min tras LED para sellar hidratación y reparar barrera.</li>
+  <li>Finaliza con tu crema nocturna ligera en mejillas y tratamiento puntual para manchas si usas alguno recomendado por tu especialista.</li>
+</ul>
+<div class="section-header">📈 QUÉ PUEDES ESPERAR — etapas realistas</div>
+<ul class="rec-list">
+  <li>Semana 1–2: disminución del brillo en T al usar <strong><a href="https://karaclinical.com/es/productos/kara-oxy-pro" target="_blank" rel="noopener" class="product-link">Kara Oxy Pro</a></strong>; sensación de piel más limpia y ligera.</li>
+  <li>Semana 3–4: poros se ven menos prominentes, textura más suave y mayor luminosidad; las sesiones combinadas de RF y LED comienzan a uniformar el tono.</li>
+  <li>Semana 5–8: aspecto más parejo del cutis, líneas finas menos perceptibles y marcas claras en atenuación leve. Mantenimiento continuo afianza estos cambios.</li>
+</ul>
+<div class="section-header">💎 POR DÓNDE EMPEZAR — prioriza con sentido</div>
+<ul class="rec-list">
+  <li>Prioridad inmediata: control de sebo y poros en la T → inicia con <strong><a href="https://karaclinical.com/es/productos/kara-oxy-pro" target="_blank" rel="noopener" class="product-link">Kara Oxy Pro</a></strong> (Mushroom) + <strong><a href="https://karaclinical.com/es/productos/kara-rfusion-pro" target="_blank" rel="noopener" class="product-link">Kara RFusion Pro</a></strong> Cleaning/RF focal.</li>
+  <li>2ª fase (semana 2 en adelante): integrar <strong><a href="https://karaclinical.com/es/productos/kara-auren-pro" target="_blank" rel="noopener" class="product-link"><a href="https://karaclinical.com/es/productos/kara-auren" target="_blank" rel="noopener" class="product-link">Kara Auren</a> Pro</a></strong> para equilibrar tono y prevenir marcas.</li>
+  <li>Mantenimiento e hidratación: añadir <strong><a href="https://karaclinical.com/es/productos/kara-bio-collagen-mask" target="_blank" rel="noopener" class="product-link">Kara Bio Collagen Mask</a></strong> 1–2x/semana.</li>
+  <li>Inversión escalonada: si quieres empezar mínimo: RFusion Pro + protector solar. Siguiente nivel: añadir Auren Pro. Nivel completo: sumar Oxy Pro y Bio Collagen Mask.</li>
+</ul>
+<p>🔗 COMBINACIONES QUE POTENCIAN TUS RESULTADOS — cómo se complementan</p>
+<ul class="rec-list">
+  <li>El barrido de alta frecuencia de <strong><a href="https://karaclinical.com/es/productos/kara-oxy-pro" target="_blank" rel="noopener" class="product-link">Kara Oxy Pro</a></strong> reduce la grasa y mejora la textura superficial, lo que potencia el efecto afinador del RF de <strong><a href="https://karaclinical.com/es/productos/kara-rfusion-pro" target="_blank" rel="noopener" class="product-link">Kara RFusion Pro</a></strong> en los poros.</li>
+  <li>La fototerapia de <strong><a href="https://karaclinical.com/es/productos/kara-auren-pro" target="_blank" rel="noopener" class="product-link"><a href="https://karaclinical.com/es/productos/kara-auren" target="_blank" rel="noopener" class="product-link">Kara Auren</a> Pro</a></strong> fija y acelera la mejora del tono tras las sesiones de RF y Oxy, y usar la <strong><a href="https://karaclinical.com/es/productos/kara-bio-collagen-mask" target="_blank" rel="noopener" class="product-link">Kara Bio Collagen Mask</a></strong> después ayuda a reparar la barrera y mantener hidratación sin obstruir poros.</li>
+  <li>Alterna sesiones: Oxy en la noche para control de sebo, RF para remodelar textura 2–3x/semana, y LED 4–5x/semana para integrar los beneficios.</li>
+</ul>
+<div class="section-header">⚠️ ANTES DE COMENZAR — advertencias y cuidados</div>
+<ul class="rec-list">
+  <li>No uses RF ni EMS si tienes marcapasos, estás embarazada, tienes implantes metálicos faciales o oncología activa. Consulta siempre con tu médico.</li>
+  <li>No apliques RF sobre la tiroides ni directamente sobre el globo ocular. Ojos cerrados durante LED.</li>
+  <li>No uses <strong><a href="https://karaclinical.com/es/productos/kara-oxy-pro" target="_blank" rel="noopener" class="product-link">Kara Oxy Pro</a></strong> sobre lesiones abiertas o piel muy irritada.</li>
+  <li>Si tu piel desarrolla reacción marcada o eritema persistente, suspende los dispositivos y consulta con un profesional.</li>
+  <li>SPF 50+ obligatorio mientras trabajes manchas o uses luz roja/amarilla.</li>
+</ul>
+<div class="section-header">💬 TU SIGUIENTE PASO — ¿quieres un calendario semanal?</div>
+<p>Si te parece, preparo un calendario semanal personalizado con días y tiempos exactos (AM/PM) según tu ritmo. ¿Prefieres empezar con la fase básica (RFusion + SPF) o te gustaría el plan completo desde la semana 1?</p>
+
+</div>
+
+<div class="catalog-wrap">
+  <div class="catalog-title">Catálogo KARA Clinical</div>
+  <div class="catalog-subtitle">Todos los productos de tu ecosistema · karaclinical.com</div>
+  <div class="catalog-grid">
+    
+  <div class="product-card">
+    <a href="https://karaclinical.com/es/productos/kara-rfusion-pro" target="_blank" rel="noopener noreferrer" class="product-img-link">
+      <div class="product-img-wrap">
+        <img src="https://cdn.prod.website-files.com/68d45578f1ffce07e524852f/691f2ad6e17298859fe59702_kara-rfusionpro-05.webp" alt="Kara RFusion Pro" loading="eager">
+      </div>
+    </a>
+    <div class="product-info">
+      <a href="https://karaclinical.com/es/productos/kara-rfusion-pro" target="_blank" rel="noopener noreferrer" class="product-name-link">
+        <div class="product-name">Kara RFusion Pro</div>
+      </a>
+      <div class="product-desc">Dispositivo 6 en 1 · RF, EMS, LED, ultrasonido, frío/calor</div>
+      <div class="product-price">$180</div>
+    </div>
+  </div>
+
+  <div class="product-card">
+    <a href="https://karaclinical.com/es/productos/kara-auren-pro" target="_blank" rel="noopener noreferrer" class="product-img-link">
+      <div class="product-img-wrap">
+        <img src="https://cdn.prod.website-files.com/68d45578f1ffce07e524852f/691deb3277c4f751bdada6be_kara-auren-pro-02.webp" alt="Kara Auren Pro" loading="eager">
+      </div>
+    </a>
+    <div class="product-info">
+      <a href="https://karaclinical.com/es/productos/kara-auren-pro" target="_blank" rel="noopener noreferrer" class="product-name-link">
+        <div class="product-name">Kara Auren Pro</div>
+      </a>
+      <div class="product-desc">Máscara LED facial y cuello · 5 longitudes de onda</div>
+      <div class="product-price">$270</div>
+    </div>
+  </div>
+
+  <div class="product-card">
+    <a href="https://karaclinical.com/es/productos/kara-auren" target="_blank" rel="noopener noreferrer" class="product-img-link">
+      <div class="product-img-wrap">
+        <img src="https://cdn.prod.website-files.com/68d45578f1ffce07e524852f/691de6c957c1fabfd00cc880_kara-auren-03.webp" alt="Kara Auren" loading="eager">
+      </div>
+    </a>
+    <div class="product-info">
+      <a href="https://karaclinical.com/es/productos/kara-auren" target="_blank" rel="noopener noreferrer" class="product-name-link">
+        <div class="product-name">Kara Auren</div>
+      </a>
+      <div class="product-desc">Máscara LED facial · rojo, infrarrojo, azul, amarillo</div>
+      <div class="product-price">$190</div>
+    </div>
+  </div>
+
+  <div class="product-card">
+    <a href="https://karaclinical.com/es/productos/kara-oxy-pro" target="_blank" rel="noopener noreferrer" class="product-img-link">
+      <div class="product-img-wrap">
+        <img src="https://cdn.prod.website-files.com/68d45578f1ffce07e524852f/691e161ed1b65af20d7aaa34_kara-oxy-pro-02.webp" alt="Kara Oxy Pro" loading="eager">
+      </div>
+    </a>
+    <div class="product-info">
+      <a href="https://karaclinical.com/es/productos/kara-oxy-pro" target="_blank" rel="noopener noreferrer" class="product-name-link">
+        <div class="product-name">Kara Oxy Pro</div>
+      </a>
+      <div class="product-desc">Alta frecuencia avanzada · 4 aplicadores incluidos</div>
+      <div class="product-price">$95</div>
+    </div>
+  </div>
+
+  <div class="product-card">
+    <a href="https://karaclinical.com/es/productos/kara-bio-collagen-mask" target="_blank" rel="noopener noreferrer" class="product-img-link">
+      <div class="product-img-wrap">
+        <img src="https://cdn.prod.website-files.com/68d45578f1ffce07e524852f/69553490350abfa4264c3c5d_face-mask-kara-home.webp" alt="Kara Bio Collagen Mask" loading="eager">
+      </div>
+    </a>
+    <div class="product-info">
+      <a href="https://karaclinical.com/es/productos/kara-bio-collagen-mask" target="_blank" rel="noopener noreferrer" class="product-name-link">
+        <div class="product-name">Kara Bio Collagen Mask</div>
+      </a>
+      <div class="product-desc">Mascarilla de biocolágeno · pack 4 unidades</div>
+      <div class="product-price">$30</div>
+    </div>
+  </div>
+
+  <div class="product-card">
+    <a href="https://karaclinical.com/es/productos/kara-pimple-patch" target="_blank" rel="noopener noreferrer" class="product-img-link">
+      <div class="product-img-wrap">
+        <img src="https://cdn.prod.website-files.com/68d45578f1ffce07e524852f/691f8cb2d0dba5d31920c305_kara-pimple-patch-02.webp" alt="Kara Pimple Patch" loading="eager">
+      </div>
+    </a>
+    <div class="product-info">
+      <a href="https://karaclinical.com/es/productos/kara-pimple-patch" target="_blank" rel="noopener noreferrer" class="product-name-link">
+        <div class="product-name">Kara Pimple Patch</div>
+      </a>
+      <div class="product-desc">Parches hidrocoloides · para lesiones activas</div>
+      <div class="product-price">$20</div>
+    </div>
+  </div>
+
+  <div class="product-card">
+    <a href="https://karaclinical.com/es/productos/kara-chin-strap" target="_blank" rel="noopener noreferrer" class="product-img-link">
+      <div class="product-img-wrap">
+        <img src="https://cdn.prod.website-files.com/68d45578f1ffce07e524852f/69a2071c960ffe025d311ee6_kara-mentonera.webp" alt="Kara Chin Strap" loading="eager">
+      </div>
+    </a>
+    <div class="product-info">
+      <a href="https://karaclinical.com/es/productos/kara-chin-strap" target="_blank" rel="noopener noreferrer" class="product-name-link">
+        <div class="product-name">Kara Chin Strap</div>
+      </a>
+      <div class="product-desc">Mentonera de soporte mandibular · uso nocturno</div>
+      <div class="product-price">$20</div>
+    </div>
+  </div>
+
+  <div class="product-card">
+    <a href="https://karaclinical.com/es/productos/kara-facial-depilator" target="_blank" rel="noopener noreferrer" class="product-img-link">
+      <div class="product-img-wrap">
+        <img src="https://cdn.prod.website-files.com/68d45578f1ffce07e524852f/691e1aef576c6ab2ae133462_kara-facial-depilator-05.webp" alt="Kara Facial Depilator" loading="eager">
+      </div>
+    </a>
+    <div class="product-info">
+      <a href="https://karaclinical.com/es/productos/kara-facial-depilator" target="_blank" rel="noopener noreferrer" class="product-name-link">
+        <div class="product-name">Kara Facial Depilator</div>
+      </a>
+      <div class="product-desc">Depilador facial eléctrico · microcorte sin irritación</div>
+      <div class="product-price">$20</div>
+    </div>
+  </div>
+  </div>
+</div>
+
+<div class="disclaimer">
+  <div class="disclaimer-title">Aviso importante</div>
+  <p>
+    Esta recomendación es de naturaleza <strong>cosmética y orientativa</strong>. Los dispositivos y productos KARA
+    no sustituyen consulta médica ni tratamientos clínicos. Si presentas patología dermatológica activa, embarazo,
+    marcapasos, implantes metálicos faciales, tratamientos oncológicos activos u otras condiciones de salud
+    específicas, te recomendamos evaluación por un profesional de la salud autorizado antes de iniciar cualquier
+    rutina con dispositivos. Los resultados son de naturaleza estética y pueden variar según cada persona.
+  </p>
+</div>
+
+<div class="footer">
+  <p>KARA Clinical™ &nbsp;·&nbsp; karaclinical.com</p>
+</div>
+
+</body>
+</html>
